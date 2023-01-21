@@ -6,7 +6,7 @@ import (
 
 	"github.com/taslimmuhammed/ecommerce/controllers"
 	"github.com/taslimmuhammed/ecommerce/database"
-	"github.com/taslimmuhammed/ecommerce/middleware"
+	"github.com/taslimmuhammed/ecommerce/middlewares"
 	"github.com/taslimmuhammed/ecommerce/routes"
 
 	"github.com/gin-gonic/gin"
@@ -15,7 +15,7 @@ import (
 func main() {
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "8000"
+		port = "8080"
 	}
 	app := controllers.NewApplication(database.ProductData(database.Client, "Products"), database.UserData(database.Client, "Users"))
 

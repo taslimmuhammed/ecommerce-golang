@@ -9,7 +9,7 @@ import (
 
 	"github.com/taslimmuhammed/ecommerce/database"
 	"github.com/taslimmuhammed/ecommerce/models"
-	generate "github.com/taslimmuhammed/ecommerce/tokens"
+	generate "github.com/taslimmuhammed/ecommerce/token"
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
@@ -127,7 +127,6 @@ func Login() gin.HandlerFunc {
 		defer cancel()
 		generate.UpdateAllTokens(token, refreshToken, founduser.User_ID)
 		c.JSON(http.StatusFound, founduser)
-
 	}
 }
 
